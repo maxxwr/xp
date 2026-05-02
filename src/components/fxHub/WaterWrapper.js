@@ -4,24 +4,41 @@ import 'jquery.ripples';
 
 export const WaterWrapper = ({ children, className, id }) => {
     const containerRef = useRef(null);
+
     useEffect(() => {
         const $el = $(containerRef.current);
 
-        try {
-            $el.ripples({
-                resolution: 512,
-                dropRadius: 30,
-                perturbance: 0.04,
-                interactive: true
-            });
-        } catch (e) {
-            console.error("Error al mojar este componente, mi rey:", e);
+        const initRipples = () => {
+            try {
+                $el.ripples('destroy');
+            } catch (e) {}
+            
+            try {
+                $el.ripples({
+                    resolution: 512,
+                    dropRadius: 30,
+                    perturbance: 0.04,
+                    interactive: true
+                });
+            } catch (e) {
+                console.error("Error ripples:", e);
+            }
+        };
+
+        initRipples();
+
+        // Reinicia el canvas cuando cambia el tamaño del contenido
+        const observer = new ResizeObserver(() => {
+            initRipples();
+        });
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
         }
 
         return () => {
-            if (typeof $el.ripples === 'function') {
-                $el.ripples('destroy');
-            }
+            observer.disconnect();
+            try { $el.ripples('destroy'); } catch (e) {}
         };
     }, []);
 
