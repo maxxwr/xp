@@ -251,41 +251,6 @@
   }
 }
 
-/* Efecto de burbujas animadas con mouse */
-@keyframes bubbleEffect {
-  0% {
-    transform: scale(0);
-    opacity: 0.8;
-  }
-
-  50% {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-
-/*para el color de la burbuja de la pantalla al pasar el mousee gaaa************************/
-.bubble {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0, 255, 127, 0.1);
-  animation: bubbleEffect 2s ease-out;
-  pointer-events: none;
-  opacity: 0;
-  transform: scale(0);
-}
-
-/* es para asegurarse de que las burbujas aparezcan con el mouse sobre la pantalla */
-.bubble-active {
-  animation: bubbleEffect 2s ease-out forwards;
-}
-
-
 .profile-img-wrapper {
   width: 80%;
   max-width: 400px;

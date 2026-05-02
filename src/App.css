@@ -227,7 +227,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  /*background-image: url('./assets/img/banner-bg.png');*/
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -297,6 +297,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill {
   padding: 0 0 50px 0;
   position: relative;
+  z-index: 2; /* 👈 NUEVO CAMBIO */
 }
 
 .skill-bx {
@@ -588,16 +589,33 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /**************************************************************/
 
 
-
-
-
-
-
-/************ Projects Css ************/
+/************ Contacto Css ************/
 .contact {
- background: linear-gradient(90.21deg, #000000 -5.91%, #321d92 111.58%);
   padding: 60px 0 200px 0;
+  position: relative;
+  /* 1. Volvemos el contenedor base transparente para ver la lluvia */
+  background: transparent !important; 
+  z-index: 1; /* Mantiene el efecto de agua */
 }
+
+/* 2. Aquí metemos la magia de tus dos colores */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Bajamos la opacidad a 0.5 para que los puntos brillen a través */
+  background: linear-gradient(
+    90.21deg, 
+    rgba(0, 0, 0, 0.5) -5.91%, 
+    rgba(74, 38, 235, 0.603) 111.58%
+  );
+  z-index: -1; /* Se queda detrás del texto, pero delante de la lluvia */
+  pointer-events: none;
+}
+
 .contact img {
   width: 92%;
 }
@@ -668,12 +686,30 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
-  /*background-image: url('./assets/img/color-sharp.png');*/
-  background: linear-gradient(90.21deg, #100b29 -5.91%, #000000 111.58%);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
+  /* 1. Transparente para que pase la animación de puntos */
+  background: transparent !important;
+  z-index: 1;
 }
+
+/* 2. Tu degradado del footer en capa secundaria */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Usamos 0.6 para que se vea oscuro pero deje pasar los puntos */
+  background: linear-gradient(
+    90.21deg, 
+    rgba(28, 20, 73, 0.6) -5.91%, 
+    rgba(0, 0, 0, 0.6) 111.58%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
 .newshub-bx {
   background: #FFFFFF;
   border-radius: 55px;
@@ -743,7 +779,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 20px;
 }
 
-
+/******ESTO ES PARA EL GIF TRUENO NO ESTE ENCIMA DE PROJECTOS ASTA FOOTER************/
+.App::before {
+  content: "";
+  position: absolute;
+  top: 142vh; /* punto de inicio perfecto */
+  left: 0;
+  width: 100%;
+  /* --- AQUÍ ESTÁ EL TRUCO --- */
+  bottom: 0; /* Esto le dice: 'estírate hasta el final del contenedor App' */
+  height: auto; /* Deja que el contenido mande el largo */
+  /* -------------------------- */
+  background-color: #000000; 
+  z-index: -1; 
+  pointer-events: none;
+}
 
 
 

@@ -12,6 +12,7 @@ import { Footer } from "./components/footerHub/Footer";
 import { BottomNav } from "./components/navPanel/BottomNav";
 import { FondoTrueno } from "./components/fxHub/trueno";
 import { Asistente } from "./components/chat/asistente";
+import { WaterWrapper } from "./components/fxHub/WaterWrapper";
 
 export const App = () => {
   useEffect(() => {
@@ -39,15 +40,17 @@ export const App = () => {
     );
   }, []);
 
-  return (
+return (
     <Router>
       <div className="App">
         <NavBar />
-        <Banner />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
+        <WaterWrapper>
+          <Banner />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Footer />
+        </WaterWrapper>
         <BottomNav />
         <FondoTrueno />
         <Asistente />

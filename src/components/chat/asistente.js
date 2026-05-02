@@ -60,7 +60,7 @@ export const Asistente = () => {
                 }
                 return nuevoEstado;
             });
-        }, 9000);
+        }, 15000);
         return () => clearInterval(intervalo);
     }, [estaAbierto, infoAsistente.globosMultiples.length]);
 

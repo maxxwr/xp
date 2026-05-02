@@ -8,7 +8,7 @@ import meter4 from "../../assets/img/angular.png";
 import meter5 from "../../assets/img/myql.png";
 import meter6 from "../../assets/img/mongodb.png";
 import meter7 from "../../assets/img/gooo.png";
-import colorSharp from "../../assets/img/color-sharp.png";
+//import colorSharp from "../../assets/img/color-sharp.png";
 import "../../color/skills/Habilidades.css";
 
 export const Skills = () => {
@@ -85,7 +85,7 @@ export const Skills = () => {
           </div>
         </div>
       </div>
-      <img className="background-image-left" src={colorSharp} alt="Background" />
+      {/*<img className="background-image-left" src={colorSharp} alt="Background" />*/}
     </section>
   );
 };

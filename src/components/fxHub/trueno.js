@@ -15,7 +15,7 @@ export const FondoTrueno = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        zIndex: -1,
+        zIndex: -2,
         overflow: "hidden",
       }}
     >

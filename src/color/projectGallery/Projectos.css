@@ -4,7 +4,7 @@
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  background-color: transparent !important
 }
 /* Contenedor principal de la imagen o gif */
 .proj-imgbx {

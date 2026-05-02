@@ -80,23 +80,6 @@ export const Banner = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1200 });
-
-    const createBubble = (event) => {
-      const bubble = document.createElement("div");
-      bubble.classList.add("bubble", "bubble-active");
-      document.body.appendChild(bubble);
-      const size = Math.random() * 50 + 30;
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
-      bubble.style.left = `${event.pageX - size / 2}px`;
-      bubble.style.top = `${event.pageY - size / 2}px`;
-      setTimeout(() => bubble.remove(), 2000);
-    };
-
-    document.body.addEventListener("mousemove", createBubble);
-    return () => {
-      document.body.removeEventListener("mousemove", createBubble);
-    };
   }, []);
 
   const handleDownloadClick = (link) => {
