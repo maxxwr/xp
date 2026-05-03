@@ -2,7 +2,7 @@
   "name": "portafolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://maxxwr.github.io/dev",
+  "homepage": "https://maxxwr.github.io/",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@emailjs/browser": "^4.4.1",
