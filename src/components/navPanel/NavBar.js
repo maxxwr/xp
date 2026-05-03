@@ -34,7 +34,7 @@ export const NavBar = () => {
   return (
     <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container>
-        <Navbar.Brand href="https://maxxwr.github.io/dev" style={{
+        <Navbar.Brand href="https://maxxwr.github.io/xp" style={{
           fontSize: '1.2rem',
           fontWeight: '700',
           color: '#A9A9A9',
